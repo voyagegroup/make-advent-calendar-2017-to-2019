@@ -1,0 +1,4 @@
+
+hello:
+	echo hello!
+	pwd
