@@ -33,9 +33,12 @@ fuga.o : fuga.c
 
 `YYYY/MM/DD/HHmm.json.gz` のような行分割JSON形式のログがたくさんあるとしましょう。
 それぞれ5分間のログを圧縮したものです。これをBigQueryに5分間分のテーブルとしてロードさせます。
-`$(PROJECT)` `$(DATASET)` `$(TABLE_5MIN)` `$(BQ_LOAD_OPTION)` `$(SCHEMA_FILE)` などのマクロは必要なものが設定されているとします。
+`$(PROJECT)` `$(DATASET)` `$(BQ_LOAD_OPTION)` `$(SCHEMA_FILE)` などのマクロは必要なものが設定されているとします。
 
 ```Makefile
+
+# ファイル名をテーブル名にsedで変換
+TABLE_5MIN = $(shell echo $* | sed -e 's/\./_/g')
 
 # gcsにアップ済みのものをBQにロードする
 %.gz.bql : %.gz.gcs
