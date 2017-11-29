@@ -9,7 +9,7 @@ test:
 	test 2 = 2
 ```
 
-`make test` してみると
+`make -C 03-drop-non-zero test` してみると
 
 ```
 test 0 = 0
