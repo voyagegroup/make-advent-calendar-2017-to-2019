@@ -27,7 +27,7 @@ syukujitsu.csv:
 やってみましょう
 
 ```bash
-$ make -C 06-prerequire
+$ make -C 05-prerequire
 curl -sO http://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv
 grep 2018 syukujitsu.csv > syukujitsu.2018.csv
 ```
@@ -35,7 +35,7 @@ grep 2018 syukujitsu.csv > syukujitsu.2018.csv
 makeは依存ファイルのタイムスタンプを見て、更新されたときだけ作ろうとします。もう一度同じコマンドを叩いてみましょう。
 
 ```bash
-$ make -C 06-prerequire
+$ make -C 05-prerequire
 [No write since last change]
 make: Nothing to be done for `all'.
 ```
@@ -46,8 +46,8 @@ make: Nothing to be done for `all'.
 makeが参照しているのはタイムスタンプなので、タイムスタンプを更新してやるとまた走ります。
 
 ```bash
-$ touch 06-prerequire/syukujitsu.csv
-$ make -C 06-prerequire
+$ touch 05-prerequire/syukujitsu.csv
+$ make -C 05-prerequire
 grep 2018 syukujitsu.csv > syukujitsu.2018.csv
 ```
 
