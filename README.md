@@ -10,8 +10,7 @@
 * [-C option](02-c-option.md)
 * [drop non zero](03-drop-non-zero.md)
 * [variable](04-variable.md)
-* シーケンシャルに実行
-* 依存
+* [dependencies](05-dependencies.md)
 * .PHONY
 * $@
 * $^
