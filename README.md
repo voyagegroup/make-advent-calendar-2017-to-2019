@@ -11,7 +11,7 @@
 * [drop non zero](03-drop-non-zero.md)
 * [variable](04-variable.md)
 * シーケンシャルに実行
-* 依存
+* [依存](06-prerequire.md)
 * .PHONY
 * $@
 * $^
