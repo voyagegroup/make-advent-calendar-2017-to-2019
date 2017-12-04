@@ -6,10 +6,10 @@
 
 ## index
 
-* [ターゲット](01-target.md)
-* [-C](02-c-option.md)
-* ステータスコード
-* [パラメータ](04-variable.md)
+* [target](01-target.md)
+* [-C option](02-c-option.md)
+* [drop non zero](03-drop-non-zero.md)
+* [variable](04-variable.md)
 * シーケンシャルに実行
 * 依存
 * .PHONY
