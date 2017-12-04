@@ -13,7 +13,7 @@
 * シーケンシャルに実行
 * 依存
 * .PHONY
-* $@
+* [$@ 変数](08-auto-var-target.md)
 * $^
 * MacOS
 * -行
