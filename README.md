@@ -14,7 +14,7 @@
 * 依存
 * .PHONY
 * $@
-* $^
+* [$^ 変数](09-auto-var-prerequire.md)
 * MacOS
 * -行
 * @行
