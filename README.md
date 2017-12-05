@@ -12,7 +12,7 @@
 * [variable](04-variable.md)
 * [依存](05-prerequire.md)
 * .PHONY
-* $@
+* [$@ 変数](06-auto-var-target.md)
 * $^
 * MacOS
 * -行
