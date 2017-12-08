@@ -11,9 +11,9 @@
 * [drop non zero](03-drop-non-zero.md)
 * [variable](04-variable.md)
 * [依存](05-prerequire.md)
-* .PHONY
 * [$@ 変数](06-auto-var-target.md)
-* $^
+* [$^ 変数](07-auto-var-prerequire.md)
+* .PHONY
 * MacOS
 * -行
 * @行
