@@ -10,11 +10,10 @@
 * [-C option](02-c-option.md)
 * [drop non zero](03-drop-non-zero.md)
 * [variable](04-variable.md)
-* シーケンシャルに実行
-* 依存
-* .PHONY
-* $@
+* [依存](05-prerequire.md)
+* [$@ 変数](06-auto-var-target.md)
 * [$^ 変数](07-auto-var-prerequire.md)
+* .PHONY
 * MacOS
 * -行
 * @行
