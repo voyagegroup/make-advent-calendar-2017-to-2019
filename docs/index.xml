@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Makefile Advent Calender</title>
+    <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/</link>
+    <description>Recent content on Makefile Advent Calender</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Dec 2018 00:26:57 +0900</lastBuildDate>
+    
+	<atom:link href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>01 target</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/01-target/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:57 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/01-target/</guid>
+      <description>ターゲット 本来の使い方 make は元々はCなどのソースコードをビルドするツールです。 みなさんはCなど知らないだろうし、知る必要もないですが、大丈夫。</description>
+    </item>
+    
+    <item>
+      <title>02 c option</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/02-c-option/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:56 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/02-c-option/</guid>
+      <description>-C オプション make -C &amp;lt;dir&amp;gt; とすることで、指定したディレクトリでmakeコマンドを実行した状態になります。 試しに make -C 02-c-option hello を実行してみると、 echo hello! hello! pwd /Users/katzchang/dev/make-advent-calendar-2017/02-c-option み</description>
+    </item>
+    
+    <item>
+      <title>03 drop non zero</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:55 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/</guid>
+      <description>ステータスコード makeで実行されるコマンドのステータスコードが0ではないとき、makeの実行はそこで中断されます。 test: test 0 = 0 test 1 != 1 # would fail</description>
+    </item>
+    
+    <item>
+      <title>04 variable</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/04-variable/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:54 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/04-variable/</guid>
+      <description>変数 Makefile 内で変数を使うことができます。 ENV := production all: echo $(ENV) $ make -C 04-variable echo production production 変数の値を実行時に上書きしていすることもできます。便利ですね。 $ make ENV=develop -C 04-variable echo develop develop</description>
+    </item>
+    
+    <item>
+      <title>05 prerequire</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/05-prerequire/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:53 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/05-prerequire/</guid>
+      <description>依存 ターゲット の : の右側に、そのターゲットファイルが依存するファイルやターゲットを書くことができます。 国民の祝日CSVから、2018年の祝日</description>
+    </item>
+    
+    <item>
+      <title>06 auto var target</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:52 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/</guid>
+      <description>ターゲットを表す自動変数 $@ ターゲットがファイルである場合、それを作るコマンドの中でその名前を使うことがよくあります。よくあるので、これを表す</description>
+    </item>
+    
+    <item>
+      <title>07 auto var prerequire</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:51 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/</guid>
+      <description>依存物を表す自動変数 $^ ターゲット名を表す $@ と同様に、依存物を表す変数 $^ もあります。 syukujitsu.$(YEAR).csv : syukujitsu.csv # `$^` は依存物に置換される grep $(YEAR) $^ &amp;gt; $@ 便利ですね。</description>
+    </item>
+    
+    <item>
+      <title>08 suppress</title>
+      <link>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/08-suppress/</link>
+      <pubDate>Thu, 06 Dec 2018 00:26:50 +0900</pubDate>
+      
+      <guid>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/08-suppress/</guid>
+      <description>suppress run: echo &#39;hello world&#39; という Makefile を実行すると $ make echo &#39;hello world&#39; hello world``bash となって冗長だったりする。実行コマンドの表示を抑制したくなりますよね そんな時は、@付きにすると run:</description>
+    </item>
+    
+  </channel>
+</rss>

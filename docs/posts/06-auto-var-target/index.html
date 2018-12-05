@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>06 auto var target - Makefile Advent Calender</title>
+<meta name="generator" content="Hugo 0.52" />
+<link href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/">
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/jquery.backtothetop/jquery.backtothetop.min.js"></script></head>
+<body>
+<div class="container"><header>
+<h1>Makefile Advent Calender</h1>
+
+</header>
+
+<div class="content-container">
+<main><h1>06 auto var target</h1>
+
+<h1 id="ターゲットを表す自動変数">ターゲットを表す自動変数 <code>$@</code></h1>
+
+<p>ターゲットがファイルである場合、それを作るコマンドの中でその名前を使うことがよくあります。よくあるので、これを表す自動変数が用意されています。</p>
+
+<pre><code class="language-Makefile"># 5日目、 `依存` の再掲
+
+syukujitsu.$(YEAR).csv : syukujitsu.csv
+	# コマンドにターゲット名が含まれることがよくある
+	grep $(YEAR) syukujitsu.csv &gt; syukujitsu.$(YEAR).csv
+</code></pre>
+
+<p>ターゲット名を表す自動変数 <code>$@</code> を使うと簡潔に書けます。</p>
+
+<pre><code class="language-Makefile">syukujitsu.$(YEAR).csv : syukujitsu.csv
+	# $@ はターゲット名に置換される
+	grep $(YEAR) syukujitsu.csv &gt; $@
+</code></pre>
+
+<p>便利ですね。</p>
+<div class="edit-meta">Last updated on 2018年12月06日<br></div><nav class="pagination"><a class="nav nav-prev" href="/make-advent-calendar-2017-to-2018/posts/05-prerequire/" title="05 prerequire"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 05 prerequire</a>
+<a class="nav nav-next" href="/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/" title="07 auto var prerequire">Next - 07 auto var prerequire <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://github.com/thingsym/hugo-theme-techdoc">TechDoc</a>. Design by <a href="https://www.thingslabo.com/">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018">Home</a></li>
+
+<li class="parent"><a href="/make-advent-calendar-2017-to-2018/posts/">Posts</a>
+<ul class="sub-menu">
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/01-target/">01 target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/02-c-option/">02 c option</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/">03 drop non zero</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/04-variable/">04 variable</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/05-prerequire/">05 prerequire</a></li>
+<li class="active"><a href="/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/">06 auto var target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/">07 auto var prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/08-suppress/">08 suppress</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

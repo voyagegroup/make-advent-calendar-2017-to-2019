@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>05 prerequire - Makefile Advent Calender</title>
+<meta name="generator" content="Hugo 0.52" />
+<link href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/05-prerequire/">
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/jquery.backtothetop/jquery.backtothetop.min.js"></script></head>
+<body>
+<div class="container"><header>
+<h1>Makefile Advent Calender</h1>
+
+</header>
+
+<div class="content-container">
+<main><h1>05 prerequire</h1>
+
+<h1 id="依存">依存</h1>
+
+<p>ターゲット の <code>:</code> の右側に、そのターゲットファイルが依存するファイルやターゲットを書くことができます。</p>
+
+<p><a href="http://www.data.go.jp/data/dataset/cao_20160323_0068/resource/8290b3b2-b56d-47ec-bf22-274167936ce0">国民の祝日CSV</a>から、2018年の祝日を抜き出してみましょう。</p>
+
+<pre><code class="language-Makefile">YEAR := 2018
+
+# 何もターゲットを指定しなければ syukujitsu.$(YEAR).csv を作りたい
+all: syukujitsu.$(YEAR).csv
+
+# syukujitsu.$(YEAR).csv は syukujitsu.csv に依存する
+syukujitsu.$(YEAR).csv : syukujitsu.csv
+	grep $(YEAR) syukujitsu.csv &gt; syukujitsu.$(YEAR).csv
+
+# syukujitsu.csv を取ってくる
+syukujitsu.csv:
+	curl -O http://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv
+</code></pre>
+
+<ul>
+<li><code>all</code> は特別なターゲット名で、ターゲットを指定しなければ <code>all</code> を実行します。</li>
+<li><code>all</code> は <code>syukujitsu.$(YEAR).csv</code> に依存していますので、<code>syukujitsu.$(YEAR).csv</code> を作ろうとします。</li>
+<li><code>syukujitsu.$(YEAR).csv</code> ターゲットを見ると、これは <code>syukujitsu.csv</code> に依存していますので、まずこれを作ろうとします。</li>
+<li><code>syukujitsu.csv</code> ターゲットは curl で取ってくるだけのものなので、まずこれを作ります。</li>
+</ul>
+
+<p>やってみましょう</p>
+
+<pre><code class="language-bash">$ make -C 05-prerequire
+curl -sO http://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv
+grep 2018 syukujitsu.csv &gt; syukujitsu.2018.csv
+</code></pre>
+
+<p>makeは依存ファイルのタイムスタンプを見て、更新されたときだけ作ろうとします。もう一度同じコマンドを叩いてみましょう。</p>
+
+<pre><code class="language-bash">$ make -C 05-prerequire
+[No write since last change]
+make: Nothing to be done for `all'.
+</code></pre>
+
+<p>作りたい syukujitsu.2018.csv のタイムスタンプが依存する syukujitsu.csv よりも新しいので、やることは何もないよ、ということになります。
+これは今よりもずっと計算機が遅かった頃に、無駄なコンパイルを避けて高速に開発するために必要だった機能です。今日においても便利ですね。</p>
+
+<p>makeが参照しているのはタイムスタンプなので、タイムスタンプを更新してやるとまた走ります。</p>
+
+<pre><code class="language-bash">$ touch 05-prerequire/syukujitsu.csv
+$ make -C 05-prerequire
+grep 2018 syukujitsu.csv &gt; syukujitsu.2018.csv
+</code></pre>
+
+<p>便利ですね。</p>
+<div class="edit-meta">Last updated on 2018年12月06日<br></div><nav class="pagination"><a class="nav nav-prev" href="/make-advent-calendar-2017-to-2018/posts/04-variable/" title="04 variable"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - 04 variable</a>
+<a class="nav nav-next" href="/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/" title="06 auto var target">Next - 06 auto var target <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://github.com/thingsym/hugo-theme-techdoc">TechDoc</a>. Design by <a href="https://www.thingslabo.com/">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018">Home</a></li>
+
+<li class="parent"><a href="/make-advent-calendar-2017-to-2018/posts/">Posts</a>
+<ul class="sub-menu">
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/01-target/">01 target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/02-c-option/">02 c option</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/">03 drop non zero</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/04-variable/">04 variable</a></li>
+<li class="active"><a href="/make-advent-calendar-2017-to-2018/posts/05-prerequire/">05 prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/">06 auto var target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/">07 auto var prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/08-suppress/">08 suppress</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Makefile Advent Calender</title>
+<meta name="generator" content="Hugo 0.52" />
+<link href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/">
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/jquery.backtothetop/jquery.backtothetop.min.js"></script></head>
+<body>
+<div class="container"><header>
+<h1>Makefile Advent Calender</h1>
+
+</header>
+
+<div class="content-container">
+<main>
+
+<h1 id="make-advent-calendar-2017-to-2018">make-advent-calendar-2017-to-2018</h1>
+
+<h2 id="story">story</h2>
+
+<p>人類が増えすぎたソースコードをスクリプトにビルドさせるようになって、既に半世紀が過ぎていた。エコシステムの周りの巨大なビルドツールは人類の第二の Makefile となり、人々はそこで子を産み、育て、そして死んでいった。</p>
+
+<h2 id="index">index</h2>
+
+<ul>
+<li><a href="posts/01-target/">target</a></li>
+<li><a href="posts/02-c-option/">-C option</a></li>
+<li><a href="posts/03-drop-non-zero/">drop non zero</a></li>
+<li><a href="posts/04-variable/">variable</a></li>
+<li><a href="posts/05-prerequire/">依存</a></li>
+<li><a href="posts/06-auto-var-target/">$@ 変数</a></li>
+<li><a href="posts/07-auto-var-prerequire/">$^ 変数</a></li>
+<li>.PHONY</li>
+<li>MacOS</li>
+<li>-行</li>
+<li>@行</li>
+<li>include</li>
+<li>-f</li>
+<li>-n</li>
+<li>$(shell)</li>
+<li>$(:)</li>
+<li>= vs :=</li>
+<li>環境変数</li>
+<li>サフィックスルール</li>
+<li>-j</li>
+<li>タイムスタンプ</li>
+<li>$&lt;</li>
+<li>$*</li>
+</ul>
+
+<h2 id="refs">refs</h2>
+
+<ul>
+<li><a href="https://twitter.com/katzchang/status/935694377040490496">https://twitter.com/katzchang/status/935694377040490496</a></li>
+<li><a href="https://twitter.com/ajiyoshi/status/935760715046178816">https://twitter.com/ajiyoshi/status/935760715046178816</a></li>
+</ul>
+<nav class="pagination"><a class="nav nav-next" href="/make-advent-calendar-2017-to-2018/posts/" title="Posts">Next - Posts <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><div class="edit-meta">Last updated on 2018年12月06日<br></div><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://github.com/thingsym/hugo-theme-techdoc">TechDoc</a>. Design by <a href="https://www.thingslabo.com/">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class="active"><a href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018">Home</a></li>
+
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/">Posts</a>
+<ul class="">
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/01-target/">01 target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/02-c-option/">02 c option</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/">03 drop non zero</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/04-variable/">04 variable</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/05-prerequire/">05 prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/">06 auto var target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/">07 auto var prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/08-suppress/">08 suppress</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

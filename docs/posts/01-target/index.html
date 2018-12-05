@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>01 target - Makefile Advent Calender</title>
+<meta name="generator" content="Hugo 0.52" />
+<link href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/01-target/">
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/js/jquery.backtothetop/jquery.backtothetop.min.js"></script></head>
+<body>
+<div class="container"><header>
+<h1>Makefile Advent Calender</h1>
+
+</header>
+
+<div class="content-container">
+<main><h1>01 target</h1>
+
+<h1 id="ターゲット">ターゲット</h1>
+
+<h2 id="本来の使い方">本来の使い方</h2>
+
+<p>make は元々はCなどのソースコードをビルドするツールです。
+みなさんはCなど知らないだろうし、知る必要もないですが、大丈夫。以下の説明にCの前提知識は別に必要ありません。
+別にC専用というわけでもないので、例えば go の開発をするのに使うこともできます。</p>
+
+<pre><code class="language-Makefile"># hello という実行ファイルは `go build -o hello` というコマンドで作る。
+hello:
+	go build -o hello
+</code></pre>
+
+<p><code>:</code> の手前の、作りたいファイル名のことを make の用語でターゲットといいます。
+次の行からはターゲットの作り方を書きます。</p>
+
+<p>ビルド手順を Makefile として書いてやれば、ソースコードやビルド手順には興味がなくビルド物だけに興味がある人でも、ビルド物を自分でビルドしてやることができます。便利ですね。</p>
+
+<p>ターゲットはファイル名であるのが基本ですが、処理の名前のようなものをターゲットにしてやることもできます。（これを擬似ターゲットと言いますが、別に覚える必要はないです）</p>
+
+<pre><code class="language-Makefile">test:
+    go test -v ./...
+</code></pre>
+
+<p>昔から伝統的によく使われるターゲット名 <code>test</code> などがあります。
+これは自動化テストを実行する目的に使われます。
+あなたがソースコードではなくビルド物だけに関心があるのだとしても、テストくらいはしたい。そんなときでも Makefile にテストするためのコマンドが書いてあれば便利ですね。
+CI などで自動化テストを回すのにも便利です。</p>
+
+<p>Makefileがあるディレクトリで、 <code>make [ターゲット名]</code> としてやるとそのターゲットファイルを作るか、あるいは擬似ターゲットを実行します。
+01-targetにサンプルのMakefileがあるので実行してみましょう</p>
+
+<pre><code class="language-bash">$ cd 01-target
+$ make test
+go test -v ./...
+(以下略)
+PASS
+ok      github.com/voyagegroup/make-advent-calendar-2017/01-target      0.006s
+</code></pre>
+<div class="edit-meta">Last updated on 2018年12月06日<br></div><nav class="pagination"><a class="nav nav-prev" href="/make-advent-calendar-2017-to-2018/posts/" title="Posts"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Posts</a>
+<a class="nav nav-next" href="/make-advent-calendar-2017-to-2018/posts/02-c-option/" title="02 c option">Next - 02 c option <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://github.com/thingsym/hugo-theme-techdoc">TechDoc</a>. Design by <a href="https://www.thingslabo.com/">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="http://voyagegroup.github.io/make-advent-calendar-2017-to-2018">Home</a></li>
+
+<li class="parent"><a href="/make-advent-calendar-2017-to-2018/posts/">Posts</a>
+<ul class="sub-menu">
+<li class="active"><a href="/make-advent-calendar-2017-to-2018/posts/01-target/">01 target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/02-c-option/">02 c option</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/">03 drop non zero</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/04-variable/">04 variable</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/05-prerequire/">05 prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/">06 auto var target</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/">07 auto var prerequire</a></li>
+<li class=""><a href="/make-advent-calendar-2017-to-2018/posts/08-suppress/">08 suppress</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

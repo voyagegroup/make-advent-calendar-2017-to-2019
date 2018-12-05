@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/01-target/</loc>
+    <lastmod>2018-12-06T00:26:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/02-c-option/</loc>
+    <lastmod>2018-12-06T00:26:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/03-drop-non-zero/</loc>
+    <lastmod>2018-12-06T00:26:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/04-variable/</loc>
+    <lastmod>2018-12-06T00:26:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/05-prerequire/</loc>
+    <lastmod>2018-12-06T00:26:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/06-auto-var-target/</loc>
+    <lastmod>2018-12-06T00:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/07-auto-var-prerequire/</loc>
+    <lastmod>2018-12-06T00:26:51+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/08-suppress/</loc>
+    <lastmod>2018-12-06T00:26:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/</loc>
+    <lastmod>2018-12-06T00:26:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/posts/</loc>
+    <lastmod>2018-12-06T00:26:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://voyagegroup.github.io/make-advent-calendar-2017-to-2018/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
